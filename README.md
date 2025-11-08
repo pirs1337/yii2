@@ -50,4 +50,9 @@ php yii migrate
 
 The application server will be accessible at: http://localhost:80
 
+To quickly add test user and initial data to the database, run this command:
+```bash
+php yii seeder/init
+```
+
 The total time spent on completing this assignment was 6 hours.

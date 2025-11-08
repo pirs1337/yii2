@@ -1,0 +1,32 @@
+services:
+
+  nginx:
+    image: webdevops/php-nginx-dev:8.4
+    working_dir: /app
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./:/app
+    links:
+      - pgsql
+    environment:
+      WEB_DOCUMENT_ROOT: /app/web
+      WEB_DOCUMENT_INDEX: index.php
+      XDEBUG_MAX_NESTING_LEVEL: 250
+      XDEBUG_PROFILER_ENABLE: 0
+      XDEBUG_START_WITH_REQUEST: 1
+      XDEBUG_DISCOVER_CLIENT_HOST: 0
+      XDEBUG_CLIENT_PORT: 9000
+      XDEBUG_CLIENT_HOST: 172.16.57.1
+
+  pgsql:
+    image: bitnami/postgresql:16
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRESQL_DATABASE: "loans"
+      POSTGRESQL_USERNAME: "user"
+      POSTGRESQL_PASSWORD: "password"
+    volumes:
+      - .:/app

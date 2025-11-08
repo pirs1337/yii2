@@ -12,7 +12,7 @@ To get started with this repository, follow these steps:
 Clone this repository to your local machine.
 
 ```sh
-git clone git@github.com:RonasIT/laravel-empty-project.git
+git clone git@github.com:pirs1337/yii2.git
 ```
 
 Build and start containers. It may takes some time.
@@ -44,8 +44,8 @@ docker exec -i -t basic-nginx-1 /bin/bash
 Run these commands in container
 
 ```bash
-    composer install 
-    /app/yii migrate
+composer install 
+/app/yii migrate
 ```
 
 The application server will be accessible at: http://localhost:80

@@ -31,21 +31,21 @@ You should see something like this.
 
 ```
 CONTAINER ID   IMAGE                       COMMAND                  CREATED              STATUS              PORTS                                                NAMES
-5ae2e24d63bb   webdevops/php-nginx-dev:8.4 "/entrypoint supervi…"   About a minute ago   Up About a minute   0.0.0.0:80->80/tcp, 0.0.0.0:443->443/tcp, 9000/tcp   basic-nginx-1
-4e1fda859342   ronasit/postgres:12.5       "/opt/bitnami/script…"   About a minute ago   Up About a minute   0.0.0.0:5432->5432/tcp                               basic-pgsql-1
+5ae2e24d63bb   webdevops/php-nginx-dev:8.4 "/entrypoint supervi…"   About a minute ago   Up About a minute   0.0.0.0:80->80/tcp, 0.0.0.0:443->443/tcp, 9000/tcp   yii2-nginx-1
+4e1fda859342   ronasit/postgres:12.5       "/opt/bitnami/script…"   About a minute ago   Up About a minute   0.0.0.0:5432->5432/tcp                               yii2-pgsql-1
 ```
 
 Connect to the `nginx` container.
 
 ```sh
-docker exec -i -t basic-nginx-1 /bin/bash
+docker exec -it yii2-nginx-1 bash
 ```
 
 Run these commands in container
 
 ```bash
 composer install 
-/app/yii migrate
+php yii migrate
 ```
 
 The application server will be accessible at: http://localhost:80

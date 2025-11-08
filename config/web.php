@@ -4,7 +4,7 @@ $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
-    'id' => 'basic',
+    'id' => 'yii2',
     'basePath' => dirname(__DIR__),
     'language' => 'en',
     'sourceLanguage' => 'en-US',
@@ -15,7 +15,7 @@ $config = [
     ],
     'components' => [
         'request' => [
-            'cookieValidationKey' => '6040632eb69f141cf6f4957c654c6a831ba32fefd8aab14777bb4066b65c0e2',
+            'cookieValidationKey' => '',
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
             ]
